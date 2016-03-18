@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Department_ID__c</fullName>
+        <displayFormat>DEP-{000000}</displayFormat>
+        <label>Department ID</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Department_Name__c</fullName>
+        <label>Department Name</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <type>TextArea</type>
+    </fields>
+    <label>Department</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Department Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Departments</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

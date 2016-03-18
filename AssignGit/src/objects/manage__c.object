@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Name__c</fullName>
+        <label>ManagerName</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>mangsal__c</fullName>
+        <label>ManagerSalary</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <label>Manager</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>ManagerName</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>managers</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,22 @@
+<apex:page standardController="Account" >
+  <!-- Begin for creating an account -->
+      <apex:outputPanel >
+  
+             <apex:pageBlock title="CREATE NEW ACCOUNT"> </apex:pageBlock>
+   
+               <apex:form >
+               <apex:outputLabel >Account Name</apex:outputLabel>
+               <!-- Enter account name -->
+               <apex:inputField value="{!account.name}"/>
+               <!-- Enter email address -->
+               <apex:outputLabel >Account EmailId </apex:outputLabel>
+               <apex:inputField value="{!account.Email_Address__c}" required="true" />
+               <!-- Button for saving and cancel -->
+               <apex:commandButton action="{!save}" value="Save"/>
+               <apex:commandbutton value="Cancel" action="{!Cancel}"  />
+        <!--  action="https://ap2.salesforce.com/001/o" -->
+               </apex:form>
+          
+      </apex:outputPanel>
+
+</apex:page>

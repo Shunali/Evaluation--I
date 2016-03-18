@@ -1,0 +1,31 @@
+<apex:page controller="AccountRemoter">
+
+
+
+ <input id="acctSearch" type="text"/>
+
+    <button onclick="getRemoteAccount()">Get Account</button>
+
+    <div id="responseErrors"></div>
+
+    <apex:pageBlock id="block">
+
+        <apex:pageBlockSection id="blockSection" columns="2">
+
+            <apex:pageBlockSectionItem id="firstItem">
+
+                <span id="remoteAcctId"/>
+
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem id="secondItem">
+
+                <apex:outputText id="acctNumEmployees"/>
+
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+<apex:includeScript value="{!URLFOR($Resource.testss, 'account.js')}"/>
+</apex:page>

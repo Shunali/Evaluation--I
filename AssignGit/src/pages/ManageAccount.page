@@ -1,0 +1,19 @@
+<apex:page standardController="Account" >
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Edit" action="https://c.ap2.visual.force.com/apex/ManageAccount2?id={!Account.ID}"/>
+            </apex:pageBlockButtons>
+           <apex:pageBlockTable value="{!Account}" var="Account">
+           
+               <apex:column value="{!Account.name}"/>
+               <apex:column value="{!Account.Website}"/>
+               <Apex:column value="{!Account.Phone}"/>
+           
+           </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+  <apex:relatedList subject="{!Account}" list="combinedAttachments"/>
+</apex:page>

@@ -1,0 +1,162 @@
+<apex:page Standardcontroller="Account" Extensions="custableExtension" sidebar="false">
+        <!-- Use of Static resources for displaying image at the header -->
+        <center><apex:image url="{!$Resource.Organisation_logo}" width="300" height="50" /></center>
+       
+         <!--apex:includeScript value="{!URLFOR($Resource.delcontacts, 'deletescript.js')}"/-->
+        
+         <apex:form >
+         <!-- On click redirect to this page and display Account name -->
+                <apex:pageBlock title="AccountTable">
+                    <apex:pageBlockTable value="{!Acclst}" var="A">
+                    <apex:column headerValue="NAME OF THE ACCOUNT" > 
+                    <apex:commandLink value="{!A.Name}" action="{!setupContacts}" rerender="conttable">
+                          <!--Declaring parameters -->
+                          <apex:param value="{!A.Id}" name="idForConts" assignTo="{!recid}"/>
+                    </apex:commandLink>
+                    </apex:column>  
+                    <apex:column value="{!A.Id}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlock>
+          </apex:form>
+          
+           <apex:form >
+                       <!-- Command link for alphabetical search -->
+                       <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">A
+                           <apex:param name="search" value="A" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                       <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">B
+                           <apex:param name="search" value="B" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">C
+                                   <apex:param name="search" value="C" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="block2">D
+                           <apex:param name="search" value="D" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="block2">E
+                           <apex:param name="search" value="E" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">F
+                           <apex:param name="search" value="F" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">G
+                           <apex:param name="search" value="G" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">H
+                           <apex:param name="search" value="H" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="block2">I
+                           <apex:param name="search" value="I" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"   reRender="block2">J
+                           <apex:param name="search" value="J" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">K
+                           <apex:param name="search" value="K" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">L
+                           <apex:param name="search" value="L" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">M
+                           <apex:param name="search" value="M" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">N
+                           <apex:param name="search" value="N" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">O
+                           <apex:param name="search" value="O" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"   reRender="block2">P
+                           <apex:param name="search" value="P" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">Q
+                           <apex:param name="search" value="Q" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">R
+                           <apex:param name="search" value="R" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="block2">S
+                           <apex:param name="search" value="S" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">T
+                           <apex:param name="search" value="T" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">U
+                           <apex:param name="search" value="U" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">V
+                           <apex:param name="search" value="V" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">W
+                           <apex:param name="search" value="W" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">X
+                           <apex:param name="search" value="X" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">Y
+                           <apex:param name="search" value="Y" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="block2">Z
+                           <apex:param name="search" value="Z" assignTo="{!conName}"/>
+                       </apex:commandLink>
+        
+            <!-- PageBlock for displaying related contacts -->
+            <apex:pageBlock title="Contacts" id="block2">
+            <apex:pageBlockTable value="{!contacts}" var="contact" id="conttable">
+                     <apex:column headerValue="DELETE">
+                    <apex:commandLink onclick="DeleteContact('{!contact.id}') " reRender="block2"  immediate="true" >Del
+                        <apex:param value="{!contact.id}" name="Contact_Id"  assignTo="{!recid}" id="ssm"/>
+                        </apex:commandLink>
+                        </apex:column>     
+                    <apex:column value="{!contact.id}" id="sss"/>
+                    <apex:column value="{!contact.FirstName}"/>
+                    <apex:column value="{!contact.LastName}"/>
+            
+            </apex:pageBlockTable>
+                
+             <!-- Button for going on previous page and deleting records -->
+             <apex:commandButton value="Previous" action="{!Previous}"  ></apex:commandButton>
+             <apex:commandButton value="Delete Contacts" action="{!deleteContactAll}" ></apex:commandButton>
+        
+            </apex:pageBlock>
+  
+              <!-- Visualforce custom component --> 
+              <apex:outputPanel > 
+                        <c:Countcontact_component />
+              </apex:outputPanel>
+              
+        </apex:form>
+          <!-- Script for Remoting  --> 
+        <script type="text/javascript">
+        function DeleteContact(Conid) {
+  
+  
+        alert( Conid);
+        
+        
+        Visualforce.remoting.Manager.invokeAction(
+        
+            '{!$RemoteAction.custableExtension.getContact}', Conid,
+
+            function(result, event){
+             alert("Contact has been deleted");
+        
+                if (event.status) {
+               Redirect();
+                console.log(result);
+                  console.log(event.status);
+
+                } else {
+                    
+                console.log(event.status);
+           
+                }
+            
+            },
+            {escape: true}
+        );
+    }
+</script>
+
+      
+</apex:page>

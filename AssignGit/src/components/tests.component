@@ -1,0 +1,8 @@
+<apex:component >
+    <apex:attribute name="bordercolor" type="String" description="TODO: Describe me"/>
+    <apex:attribute name="myvalue" type="String" description="TODO: Describe me"/>
+   
+
+   <apex:outputText value="{!myValue}"/>
+
+</apex:component>

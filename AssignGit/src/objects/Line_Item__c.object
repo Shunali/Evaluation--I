@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <formula>Labour__c  +  New_client_discount__c  +  Service_Fee__c  +  Tax__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>InvoiceStatement__c</fullName>
+        <label>Invoice Statement</label>
+        <referenceTo>Invoice_Statement__c</referenceTo>
+        <relationshipLabel>Line Items</relationshipLabel>
+        <relationshipName>Line_Items</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Labour__c</fullName>
+        <formula>Working_hours__c  * 75</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Labour</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <label>Merchandise</label>
+        <referenceTo>Merchandise__c</referenceTo>
+        <relationshipLabel>Line Items</relationshipLabel>
+        <relationshipName>Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>New_Customer__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>New Customer</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>New_client_discount__c</fullName>
+        <label>New client discount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <label>Product Name</label>
+        <length>45</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Service_Fee__c</fullName>
+        <label>Service Fee</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Tax__c</fullName>
+        <label>Tax</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Price__c</fullName>
+        <label>Unit Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Sold__c</fullName>
+        <label>Unit Sold</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Working_hours__c</fullName>
+        <label>Working_hours</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <label>Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Line Item  Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

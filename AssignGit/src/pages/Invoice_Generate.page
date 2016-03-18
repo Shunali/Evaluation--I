@@ -1,0 +1,131 @@
+<apex:page standardController="Invoice_Statement__c"  extensions="LineItemExtension" renderAs="PDF">
+<head>
+<style>
+.test1{
+width:200px;
+height:0px;
+}
+</style>
+ </head>
+ <body>
+<apex:pageBlock mode="detail">
+
+<apex:pageBlockSection >
+
+  <apex:pageblocksectionitem dataStyleClass="test1">
+     <h3><b>{!$Organization.Name }</b></h3>
+        <table border ="1" id="header">     
+         <tr>
+             <td>{!$Organization.Street},{!$Organization.City},{!$Organization.PostalCode}</td>  
+         </tr>
+         <tr>
+                      
+             <td>{!$Organization.State},{!$Organization.Country}</td>
+         </tr>
+         <tr>
+             <td>{!$Organization.Phone }</td>
+         </tr>
+        </table>
+ </apex:pageblocksectionitem> 
+ 
+  <apex:pageblocksectionitem >
+      <div  style="padding-left: 100px;" >
+        <h2><b>INVOICE</b></h2>
+            <table border ="1" id="header"  width="300" height="200" >
+             <tr>
+                 <td>Invoice Number</td>
+                 <td>Invoice Date</td>
+             </tr>
+             <tr>
+                 <td>{!Invoice_Statement__c.name}</td>
+             <td>{!today()}</td>
+         </tr>
+         
+     </table>
+    </div>
+ </apex:pageblocksectionitem>
+
+
+</apex:pageBlockSection>
+<apex:pageBlockSection id="Billsection" title="Bill To" columns="2"> 
+
+<table id="billCustomer" border ="1" cellpadding="0" cellspacing="0">
+     
+         <tr>
+             <td>Customer Id:</td>
+             <td>{!Invoice_Statement__c.id}</td>
+         </tr>
+         <tr>
+             <td>Customer Name:</td>
+             <td>{!Invoice_Statement__c.name__r.name}</td>
+         </tr>
+     
+         <tr>
+             <td>Company Name:</td>
+             <td>{!Invoice_Statement__c.name__r.Company__c}</td>
+         </tr>
+     
+         <tr>
+             <td>Street Name:</td>
+             <td>{!Invoice_Statement__c.Name__r.MailingStreet}</td>
+         </tr>
+         
+         <tr>
+             <td>City :</td>
+             <td>{!Invoice_Statement__c.Name__r.MailingCity}</td>
+            
+         </tr>
+         
+         <tr>
+             <td>{!Invoice_Statement__c.Name__r.MailingState}</td>
+             <td>{!Invoice_Statement__c.Name__r.MailingPostalCode}</td>
+         </tr>
+         
+         <tr>
+             <td>Phone :</td>
+             <td>{!Invoice_Statement__c.Name__r.Phone}</td>
+         </tr>
+         
+         
+          <tr>
+             <td>Email :</td>
+             <td>{!Invoice_Statement__c.Name__r.Email}</td>
+         </tr>
+     </table>
+
+</apex:pageBlockSection> 
+
+</apex:pageBlock>
+
+<apex:pageBlock title="DetailTable">
+ 
+       <apex:pageBlockTable value="{!ListLabor}" var="item" id="MyTable_001"  rows="1" columns="5" 
+            cellpadding="10px"  border="1px">
+
+            <apex:column value="{!item.Product_Name__c}"/>
+
+            <apex:column value="{!item.New_client_discount__c}"/>
+            
+            <apex:column value="{!item.Service_Fee__c}"/>
+            
+            <apex:column value="{!item.Labour__c}"/>
+
+        </apex:pageBlockTable>
+
+ 
+ </apex:pageBlock>
+
+
+
+     <table id="Description" border="1" width="90%">
+        <td><B>Description</B></td>
+        <td><B>Amount</B></td>
+        <tr>
+             <td>Thank You For Your Business Total:</td>
+             <td>{!Invoice_Statement__c.Total__c}</td>
+         </tr>
+         
+     </table>
+
+</body>
+</apex:page>

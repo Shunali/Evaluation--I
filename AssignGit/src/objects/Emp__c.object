@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Age__c</fullName>
+        <label>EmpAge</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>EmpNAme__c</fullName>
+        <label>Employeename</label>
+        <length>25</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>EmpStatus__c</fullName>
+        <label>EmployeeStatus</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Current Emp</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Left Job</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Empsal__c</fullName>
+        <label>Employeesalary</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <label>Employee1</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>EmployeeName</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Employees</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

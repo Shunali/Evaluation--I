@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Depart__c</fullName>
+        <label>Depart</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Employeename__c</fullName>
+        <label>Employeename</label>
+        <referenceTo>Emp__c</referenceTo>
+        <relationshipLabel>Organisations</relationshipLabel>
+        <relationshipName>Organisations</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>ManagerName__c</fullName>
+        <label>ManagerName</label>
+        <referenceTo>manage__c</referenceTo>
+        <relationshipLabel>Organisations</relationshipLabel>
+        <relationshipName>Organisations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <label>Organisation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Organisation Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Organisations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

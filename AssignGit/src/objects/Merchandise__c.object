@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>The activity of promoting the sale of goods at retail.
+Merchandising activities may include display techniques, free samples, on-the-spot demonstration, pricing, shelf talkers, special offers, and other point-of-sale methods.</description>
+        <inlineHelpText>goods are buy or sell</inlineHelpText>
+        <label>Description</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <label>Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Inventory__c</fullName>
+        <label>Total Inventory</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>Merchandise</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Merchandise Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Merchandise</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

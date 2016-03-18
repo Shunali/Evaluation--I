@@ -1,0 +1,140 @@
+<apex:page standardController="Account"   extensions="ListviewExtension,accsearchcontroller">
+
+<!-- Use of Static resources for displaying image at the header -->
+<center><apex:image url="{!$Resource.Organisation_logo}" width="300" height="50"/></center>
+
+         <apex:form Id="test">  
+          <!-- For searching accounts from the search textbox -->
+          <!-- Search button and clear link -->
+                 <apex:inputText value="{!searchstring}" label="Input" />   
+                 <apex:commandButton value="Search records" action="{!search}" rerender="SearchTable,test"/>  
+                 <apex:commandLink value="Clear records" action="{!clear}"/>
+                 
+                 <!-- For displaying error message if input is less than 3 -->
+                 <apex:pageMessages ></apex:pageMessages>
+                 
+                 <!-- PageBlock for displaying search item list -->
+                     <apex:pageBlock title="Search Result">  
+                         <apex:pageblockTable value="{!acc}" var="a" id="SearchTable">  
+                         <apex:column ><apex:outputlink value="https://ap1.salesforce.com/{!a.id}">{!a.Name}</apex:outputlink>  </apex:column>  
+                         <apex:column value="{!a.id}"/>  
+                         </apex:pageBlockTable>     
+                     </apex:pageBlock>   
+   
+          </apex:form>
+      
+      
+          <apex:form >  
+          
+                 <!-- Apex Pageblock for displaying list of all account -->
+                 <apex:pageBlock title="LIST OF ACCOUNT"  >
+                     
+                     <!-- Command link for alphabetical search -->
+                       <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">A
+                           <apex:param name="search" value="A" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                      
+                       <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">B
+                           <apex:param name="search" value="B" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">C
+                                   <apex:param name="search" value="C" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="AccBlock">D
+                           <apex:param name="search" value="D" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="AccBlock">E
+                           <apex:param name="search" value="E" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">F
+                           <apex:param name="search" value="F" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">G
+                           <apex:param name="search" value="G" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">H
+                           <apex:param name="search" value="H" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="AccBlock">I
+                           <apex:param name="search" value="I" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"   reRender="AccBlock">J
+                           <apex:param name="search" value="J" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">K
+                           <apex:param name="search" value="K" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">L
+                           <apex:param name="search" value="L" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">M
+                           <apex:param name="search" value="M" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">N
+                           <apex:param name="search" value="N" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">O
+                           <apex:param name="search" value="O" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"   reRender="AccBlock">P
+                           <apex:param name="search" value="P" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">Q
+                           <apex:param name="search" value="Q" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">R
+                           <apex:param name="search" value="R" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}" reRender="AccBlock">S
+                           <apex:param name="search" value="S" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">T
+                           <apex:param name="search" value="T" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">U
+                           <apex:param name="search" value="U" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">V
+                           <apex:param name="search" value="V" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">W
+                           <apex:param name="search" value="W" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">X
+                           <apex:param name="search" value="X" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">Y
+                           <apex:param name="search" value="Y" assignTo="{!conName}"/>
+                       </apex:commandLink>&nbsp;
+                        <apex:commandLink action="{!searchAlphabetical}"  reRender="AccBlock">Z
+                           <apex:param name="search" value="Z" assignTo="{!conName}"/>
+                       </apex:commandLink>
+                   
+                <!-- Displaying the account list and related fields -->      
+                <apex:pageBlockSection title="Account Details" id="AccBlock" columns="1">
+                <apex:pageBlockTable value="{!a1}" var="a">
+        
+                        <apex:column headerValue="Account Name"> 
+                        <apex:commandLink value="{!a.Name}" onClick="window.open('/{!a.Id}','_blank');"/></apex:column> 
+                        <apex:column headerValue="Website">
+                        <apex:commandLink value="{!a.Website}" onClick="window.open('/{!a.Id}','_blank');"/></apex:column>
+                        <apex:column value="{!a.phone}"/>
+                        <apex:column value="{!a.Email_Address__c}"/>
+                        
+                        <!-- Button to redirect it to next page of account and their related contacts -->
+                        <apex:column ><apex:commandButton value="Manage Contacts" action="{!Redirect}" rerender="all">
+                             <!-- Parameter passing -->
+                             <apex:param name="AccIdParam" value="{!a.Id}" assignTo="{!AccIdChosen}"/>
+                        </apex:commandButton></apex:column>
+
+                </apex:pageBlockTable>
+                </apex:pageBlockSection>
+                </apex:pageBlock>
+         
+            <apex:outputPanel >
+                <!-- Visualforce custom component --> 
+                <c:Count_component />
+            </apex:outputPanel>
+       </apex:form>
+
+</apex:page>

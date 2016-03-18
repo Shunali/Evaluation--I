@@ -1,0 +1,14 @@
+<apex:page standardController="account">
+<apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockButtons >
+         <apex:commandButton value="save" action="{!save}"/>
+    </apex:pageBlockButtons>
+       
+            <apex:pageBlockTable value="{!account}" var="acc" width="100%">
+                <apex:column value="{!acc.name}"/>
+             </apex:pageBlockTable>     
+    </apex:pageBlock>
+</apex:form>
+<apex:relatedList subject="{!account}" list="combinedAttachments"/>
+</apex:page>

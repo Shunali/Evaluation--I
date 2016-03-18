@@ -1,0 +1,5 @@
+<!--Component for counting the number of contacts -->
+<apex:component controller="ComponentController" >
+       <apex:attribute name="label" type="String" description="TODO: Describe me"/>
+       <apex:outputText value="Count = {!CountContact}" style="color:red;"/>     
+</apex:component>
