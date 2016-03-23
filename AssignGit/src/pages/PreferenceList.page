@@ -1,0 +1,50 @@
+<apex:page Standardcontroller="Account" extensions="PreferenceList" sidebar="false">
+ <!-- List of Preference-->
+              <apex:form id="form">
+       
+                        <apex:pageBlock title="Create Preferences" id="block1">
+                            <apex:pageBlockSection rendered="{!var}" > 
+                                    <!-- Field for creating an Preference-->
+                                   
+                                 <apex:inputField value="{!prefrenceObj.Name}"/>
+                                 <apex:inputField value="{!prefrenceObj.PreferenceName__c}"/>
+                                 <apex:inputField value="{!prefrenceObj.Primary_preference__c}"/>
+                                 <apex:inputField value="{!prefrenceObj.Priority__c}"/>
+                                 <!-- Save Button-->
+                                 <br><apex:commandButton action="{!save}" value="Save" rerender="block1,block2" />
+                                 <!-- Cancel Button-->
+                                 <apex:commandbutton value="Cancel" action="{!saveAction}" rerender="block1" /></br>
+                            </apex:pageBlockSection>  
+                        </apex:pageBlock>
+                      
+                        <apex:pageBlock title="Preferences" id="block2" >
+                            
+                            <apex:pageBlockTable value="{!Preferences}" var="Preference" id="prefer">
+                                    <!-- Defining the columns of Preference list-->
+                                    
+                                    <apex:column >
+                                        <apex:commandLink action="{!deletePreference}" onclick="if(!confirm('Are you sure?')) return false;" reRender="form">Del
+                                        <apex:param value="{!Preference.id}" name="Preference_Id"  assignTo="{!recid}"/>
+                                        </apex:commandLink>
+                                    </apex:column>
+                                    
+                                    <apex:column >
+                                        <apex:commandLink action="{!editaction}">Edit
+                                        <apex:param value="{!Preference.id}" name="Preference_Id"  assignTo="{!recid}"/>
+                                        </apex:commandLink>
+                                    </apex:column>
+                                    
+                                    <apex:column value="{!Preference.PreferenceName__c}"/>
+                                    <apex:column value="{!Preference.Priority__c}"/>
+                                
+                               </apex:pageBlockTable>
+                          
+                               <!-- Button for Adding the preference records -->
+                               <apex:commandButton value="Add New" action="{!AddPreference}" ></apex:commandButton>
+ 
+                      </apex:pageBlock>
+                     
+                      
+             </apex:form>
+             
+</apex:page>

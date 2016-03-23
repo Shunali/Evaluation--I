@@ -61,6 +61,12 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Primary_preference__c</fullName>
+        <label>Primary preference</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
         <fullName>SLAExpirationDate__c</fullName>
         <label>SLA Expiration Date</label>
         <type>Date</type>
